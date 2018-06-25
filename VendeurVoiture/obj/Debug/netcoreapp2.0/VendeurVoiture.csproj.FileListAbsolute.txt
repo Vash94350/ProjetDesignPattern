@@ -1,0 +1,11 @@
+C:\Users\micha\source\repos\VendeurVoiture\VendeurVoiture\bin\Debug\netcoreapp2.0\VendeurVoiture.deps.json
+C:\Users\micha\source\repos\VendeurVoiture\VendeurVoiture\bin\Debug\netcoreapp2.0\VendeurVoiture.runtimeconfig.json
+C:\Users\micha\source\repos\VendeurVoiture\VendeurVoiture\bin\Debug\netcoreapp2.0\VendeurVoiture.runtimeconfig.dev.json
+C:\Users\micha\source\repos\VendeurVoiture\VendeurVoiture\bin\Debug\netcoreapp2.0\VendeurVoiture.dll
+C:\Users\micha\source\repos\VendeurVoiture\VendeurVoiture\bin\Debug\netcoreapp2.0\VendeurVoiture.pdb
+C:\Users\micha\source\repos\VendeurVoiture\VendeurVoiture\obj\Debug\netcoreapp2.0\VendeurVoiture.csprojResolveAssemblyReference.cache
+C:\Users\micha\source\repos\VendeurVoiture\VendeurVoiture\obj\Debug\netcoreapp2.0\VendeurVoiture.csproj.CoreCompileInputs.cache
+C:\Users\micha\source\repos\VendeurVoiture\VendeurVoiture\obj\Debug\netcoreapp2.0\VendeurVoiture.AssemblyInfoInputs.cache
+C:\Users\micha\source\repos\VendeurVoiture\VendeurVoiture\obj\Debug\netcoreapp2.0\VendeurVoiture.AssemblyInfo.cs
+C:\Users\micha\source\repos\VendeurVoiture\VendeurVoiture\obj\Debug\netcoreapp2.0\VendeurVoiture.dll
+C:\Users\micha\source\repos\VendeurVoiture\VendeurVoiture\obj\Debug\netcoreapp2.0\VendeurVoiture.pdb
