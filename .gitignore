@@ -1,1 +1,6 @@
 .vs/
+VendeurVoiture.sln
+VendeurVoiture/obj/
+VendeurVoiture/bin/
+VendeurVoiture/App.config
+VendeurVoiture/VendeurVoiture.csproj
