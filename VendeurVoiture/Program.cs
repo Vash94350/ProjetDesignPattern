@@ -34,6 +34,15 @@ namespace VendeurVoiture
                 Console.WriteLine(i.Name);
                 Console.WriteLine(i.Size);
             }
+
+            Conception.Voiture voiture2 = new Conception.Voiture();
+            Conception.ComposantFabric atelier = new Conception.ComposantFabric();
+            Conception.Composant moteur20CV = atelier.getComposant("moteur20CV");
+            voiture2.lesComposants.Add(moteur20CV);
+
+            Console.WriteLine("Les composants de la voiture2 sont ");
+            Console.WriteLine(voiture2.toString());
+
             Console.Read();
         }
     }
