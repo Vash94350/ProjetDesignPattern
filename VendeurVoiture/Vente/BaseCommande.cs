@@ -15,4 +15,3 @@ namespace VendeurVoiture.Vente
         protected abstract double CalculePreTaxMontant();
     }
 }
-}

@@ -6,6 +6,6 @@ namespace VendeurVoiture.Vente
 {
     interface ICommande
     {
-        double CalculaMontant();
+        double CalculeMontant();
     }
 }
