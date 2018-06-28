@@ -52,6 +52,7 @@ namespace VendeurVoiture.Fabrique
             this.name = name;
             this.reference = reference;
             rangements = new List<IRangement>();
+            Comparateur.StockDeVoiture.Instance.Add(this);
         }
     }
 }

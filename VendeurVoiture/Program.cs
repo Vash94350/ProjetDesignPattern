@@ -51,6 +51,15 @@ namespace VendeurVoiture
             Vente.CommandeEnFrance commande_MonsieurDupont = new Vente.CommandeEnFrance(2037.2);
             Console.WriteLine("Monsieur Dupont devra payer un montant total de : " + commande_MonsieurDupont.CalculeMontant());
 
+            //Module Comparateur avec en plus le pattern Singleton
+            Console.WriteLine("Voici le stock de voiture : ");
+            foreach (Fabrique.Voiture voiturei in Comparateur.StockDeVoiture.Instance.GetVoitureDisponnible(DateTime.Now))
+            {
+                Console.WriteLine("Voici la " + voiturei.Name + voiturei.Reference);
+            }
+            Console.WriteLine();
+
+
             Console.Read();
         }
     }
