@@ -4,15 +4,30 @@ using System.Text;
 
 namespace VendeurVoiture.Conception
 {
-    class Composant
+    public class Composant : IReferenceable
     {
-        int price;
+        public Stock.Price price;
         public String name;
+        public string reference;
 
-        public Composant(String name,int price)
+        public String Reference
+        {
+            get
+            {
+                return this.reference;
+            }
+        }
+
+        public Composant(String name,Stock.Price price,String reference)
         {
             this.price = price;
             this.name = name;
+            this.reference = reference;
+        }
+
+        public void SetPrice(Stock.Price price)
+        {
+            this.price = price;
         }
     }
 }

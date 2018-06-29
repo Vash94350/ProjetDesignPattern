@@ -9,6 +9,19 @@ namespace VendeurVoiture.Fabrique
         private int nombreDeRoues = 2;
         private String reference = "NULL";
         private string name;
+        private Stock.Price price = null;
+
+        public Stock.Price Price
+        {
+            get
+            {
+                return this.price;
+            }
+            set
+            {
+                this.price = value;
+            }
+        }
 
         public int NombreDeRoues
         {

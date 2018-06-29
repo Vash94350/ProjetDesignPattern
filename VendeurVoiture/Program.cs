@@ -14,48 +14,40 @@ namespace VendeurVoiture
             boitagantparent.AddRangemment(pochefille);
             boitagantparent.AddRangemment(pochefille2);
             boitagantparent.AddRangemment(boitagantbanal);
-            /*           Voiture voiture = new Voiture("turbobinette","x285962f");
-                       Console.WriteLine(voiture.NombreDeRoues);
-                       voiture.Rangements.Add(boitagantparent);
-                       foreach (IRangement i in voiture.Rangements)
-                       {
-                           Console.WriteLine(i.Name);
-                           Console.WriteLine(i.Size);
-                       }
-                       Console.Read();*/
 
             //Module Fabrique
             Fabrique.FabriqueAcier fabriqueAcier = new Fabrique.FabriqueAcier();
-            Fabrique.Voiture voiture = fabriqueAcier.CreateVoiture("voiture en acier", "xizjogiz");
-            voiture.Rangements.Add(boitagantparent);
-            Console.WriteLine(voiture.Name);
-            Console.WriteLine(voiture.NombreDeRoues);
+            Fabrique.Voiture voiture = fabriqueAcier.CreateVoiture("voiture en acier", "v00001");
+            voiture.AddRangement(boitagantparent);
+            Console.WriteLine("Voiture cree : " + voiture.Name);
+            Console.WriteLine("Ella a " + voiture.NombreDeRoues + " roues");
             Console.WriteLine("Les rangements presents sont : ");
             foreach (IRangement i in voiture.Rangements)
             {
-                Console.WriteLine(i.Name);
-                Console.WriteLine(i.Size);
+                Console.WriteLine("Le rangement : " + i.Name + " de taille : " + i.Size);
             }
 
 
             //Module Conception
-            Conception.Voiture voiture2 = new Conception.Voiture();
             Conception.ComposantFabric atelier = new Conception.ComposantFabric();
             Conception.Composant moteur20CV = atelier.getComposant("moteur20CV");
-            voiture2.lesComposants.Add(moteur20CV);
-
-            Console.WriteLine("Les composants de la voiture2 sont ");
-            Console.WriteLine(voiture2.toString());
+            moteur20CV.SetPrice(new Stock.Price(100.0, "EUR"));
+            Conception.Composant tableauDeBordGPSIntegre = atelier.getComposant("GPSIntegre");
+            tableauDeBordGPSIntegre.SetPrice(new Stock.Price(85.0, "EUR"));
+            voiture.AddComposant(moteur20CV);
+            voiture.AddComposant(moteur20CV);
+            voiture.AddComposant(tableauDeBordGPSIntegre);
+            Console.WriteLine("Les composant de " + voiture.Name + " sont : " + voiture.getListDesComposants());
 
             //Module Vente
-            Vente.CommandeEnFrance commande_MonsieurDupont = new Vente.CommandeEnFrance(2037.2);
-            Console.WriteLine("Monsieur Dupont devra payer un montant total de : " + commande_MonsieurDupont.CalculeMontant());
+            Vente.CommandeEnFrance commande_MonsieurDupont = new Vente.CommandeEnFrance(voiture);
+            Console.WriteLine("Monsieur Dupont devra payer un montant total de : " + commande_MonsieurDupont.CalculeMontant() + " " + commande_MonsieurDupont.getDevise());
 
             //Module Comparateur avec en plus le pattern Singleton
             Console.WriteLine("Voici le stock de voiture : ");
-            foreach (Fabrique.Voiture voiturei in Comparateur.StockDeVoiture.Instance.GetVoitureDisponnible(DateTime.Now))
+            foreach (Fabrique.Voiture voiturei in Stock.StockDeVoiture.Instance.GetVoitureDisponnible(DateTime.Now))
             {
-                Console.WriteLine("Voici la " + voiturei.Name + voiturei.Reference);
+                Console.WriteLine("Voici la " + voiturei.Name + " avec pour reference : " + voiturei.Reference);
             }
             Console.WriteLine();
 

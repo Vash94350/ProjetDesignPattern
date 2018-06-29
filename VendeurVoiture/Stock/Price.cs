@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace VendeurVoiture.Comparateur
+namespace VendeurVoiture.Stock
 {
-    class Price
+    public class Price
     {
         private double price;
         private string currency;

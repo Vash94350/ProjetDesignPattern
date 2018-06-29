@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using VendeurVoiture.Stock;
 
 namespace VendeurVoiture.Fabrique
 {
@@ -10,6 +11,28 @@ namespace VendeurVoiture.Fabrique
         private String reference = "NULL";
         private String name;
         private List<IRangement> rangements;
+        private List<Conception.Composant> lesComposants=new List<Conception.Composant>();
+        private Stock.Price price = null;
+
+        public List<Conception.Composant> LesComposants
+        {
+            get
+            {
+                return lesComposants;
+            }
+        }
+
+        public Stock.Price Price
+        {
+            get
+            {
+                return this.price;
+            }
+            set
+            {
+                this.price = value;
+            }
+        }
 
         public List<IRangement> Rangements
         {
@@ -17,10 +40,11 @@ namespace VendeurVoiture.Fabrique
             {
                 return this.rangements;
             }
-            set
-            {
-                this.rangements = value;
-            }
+        }
+
+        public void AddRangement(IRangement rangement)
+        {
+            Rangements.Add(rangement);
         }
 
         public int NombreDeRoues
@@ -47,12 +71,29 @@ namespace VendeurVoiture.Fabrique
             }
         }
 
+        public String getListDesComposants()
+        {
+            String result = String.Empty;
+            //            foreach (var flyweight in lesComposants)
+            //            {
+            //                result += flyweight.name + "   ";
+            //            }
+            lesComposants.ForEach(Composant => result += Composant.name + " avec reference " + Composant.Reference + "    ");
+
+            return result;
+        }
+
+        public void AddComposant(Conception.Composant composant)
+        {
+            lesComposants.Add(composant);
+        }
+
         public Voiture(String name, String reference)
         {
             this.name = name;
             this.reference = reference;
             rangements = new List<IRangement>();
-            Comparateur.StockDeVoiture.Instance.Add(this);
+            Stock.StockDeVoiture.Instance.AddVoiture(this);
         }
     }
 }

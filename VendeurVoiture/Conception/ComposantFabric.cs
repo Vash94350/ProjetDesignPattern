@@ -6,6 +6,8 @@ namespace VendeurVoiture.Conception
 {
     class ComposantFabric
     {
+        String reference;
+        int incrementReference = 0;
         Dictionary<String, Composant> composants = new Dictionary<string, Composant>();
         public Composant getComposant(String key)
         {
@@ -15,7 +17,9 @@ namespace VendeurVoiture.Conception
             }
             else
             {
-                var newComposant = new Composant(key,0);
+                reference = "c000" + incrementReference.ToString();
+                incrementReference++;
+                var newComposant = new Composant(key,new Stock.Price(0.0,"EUR"),reference);
                 composants.Add(key, newComposant);
                 return newComposant;
             }

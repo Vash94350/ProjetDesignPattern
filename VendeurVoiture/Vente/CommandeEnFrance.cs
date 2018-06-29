@@ -7,10 +7,16 @@ namespace VendeurVoiture.Vente
     class CommandeEnFrance : BaseCommande
     {
         private double preTaxMontant;
+        private String devise = "Inconnue";
 
-        public CommandeEnFrance(double preTaxMontant)
+        public CommandeEnFrance(Fabrique.Voiture voiture)
         {
-            this.preTaxMontant = preTaxMontant;
+            this.preTaxMontant = voiture.Price.Amount;
+            this.devise = voiture.Price.Currency;
+            foreach (Conception.Composant composant in voiture.LesComposants)
+            {
+                this.preTaxMontant += composant.price.Amount;
+            }
         }
 
         protected override double CalculePreTaxMontant()
@@ -21,6 +27,11 @@ namespace VendeurVoiture.Vente
         protected override double CalculeTVA()
         {
             return this.preTaxMontant;
+        }
+
+        public String getDevise()
+        {
+            return devise;
         }
     }
 }
