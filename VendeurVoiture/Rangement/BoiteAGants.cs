@@ -44,17 +44,14 @@ namespace VendeurVoiture
             }
         }
 
-        public List<IRangement> Rangements
+        public void AddRangemment(IRangement rangement)
         {
-            get
-            {
-                return rangements;
-            }
+            rangements.Add(rangement);
         }
 
         public int GetContainsNumber()
         {
-            return Rangements.Count;
+            return rangements.Count;
         }
 
         public BoiteAGants(string name, int size, string openingSystem, string reference)
