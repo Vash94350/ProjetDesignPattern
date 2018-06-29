@@ -8,7 +8,7 @@ namespace VendeurVoiture.Fabrique
     {
         public MotoCarbone(string name, string reference) : base(name, reference)
         {
-            Price = new Stock.Price(1800.0, "EUR");
+            Price = new Vente.Price(1800.0, "EUR");
 
         }
     }

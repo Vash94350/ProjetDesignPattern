@@ -31,9 +31,9 @@ namespace VendeurVoiture
             //Module Conception
             Conception.ComposantFabric atelier = new Conception.ComposantFabric();
             Conception.Composant moteur20CV = atelier.getComposant("moteur20CV");
-            moteur20CV.SetPrice(new Stock.Price(100.0, "EUR"));
+            moteur20CV.SetPrice(new Vente.Price(100.0, "EUR"));
             Conception.Composant tableauDeBordGPSIntegre = atelier.getComposant("GPSIntegre");
-            tableauDeBordGPSIntegre.SetPrice(new Stock.Price(85.0, "EUR"));
+            tableauDeBordGPSIntegre.SetPrice(new Vente.Price(85.0, "EUR"));
             voiture.AddComposant(moteur20CV);
             voiture.AddComposant(moteur20CV);
             voiture.AddComposant(tableauDeBordGPSIntegre);

@@ -12,7 +12,7 @@ namespace VendeurVoiture.Fabrique
         private String name;
         private List<IRangement> rangements;
         private List<Conception.Composant> lesComposants=new List<Conception.Composant>();
-        private Stock.Price price = null;
+        private Vente.Price price = null;
 
         public List<Conception.Composant> LesComposants
         {
@@ -22,7 +22,7 @@ namespace VendeurVoiture.Fabrique
             }
         }
 
-        public Stock.Price Price
+        public Vente.Price Price
         {
             get
             {

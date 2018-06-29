@@ -6,7 +6,7 @@ namespace VendeurVoiture.Conception
 {
     public class Composant : IReferenceable
     {
-        public Stock.Price price;
+        public Vente.Price price;
         public String name;
         public string reference;
 
@@ -18,14 +18,14 @@ namespace VendeurVoiture.Conception
             }
         }
 
-        public Composant(String name,Stock.Price price,String reference)
+        public Composant(String name,Vente.Price price,String reference)
         {
             this.price = price;
             this.name = name;
             this.reference = reference;
         }
 
-        public void SetPrice(Stock.Price price)
+        public void SetPrice(Vente.Price price)
         {
             this.price = price;
         }

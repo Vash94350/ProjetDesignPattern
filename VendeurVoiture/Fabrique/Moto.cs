@@ -9,9 +9,9 @@ namespace VendeurVoiture.Fabrique
         private int nombreDeRoues = 2;
         private String reference = "NULL";
         private string name;
-        private Stock.Price price = null;
+        private Vente.Price price = null;
 
-        public Stock.Price Price
+        public Vente.Price Price
         {
             get
             {

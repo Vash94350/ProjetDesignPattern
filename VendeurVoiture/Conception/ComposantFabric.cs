@@ -19,7 +19,7 @@ namespace VendeurVoiture.Conception
             {
                 reference = "c000" + incrementReference.ToString();
                 incrementReference++;
-                var newComposant = new Composant(key,new Stock.Price(0.0,"EUR"),reference);
+                var newComposant = new Composant(key,new Vente.Price(0.0,"EUR"),reference);
                 composants.Add(key, newComposant);
                 return newComposant;
             }
